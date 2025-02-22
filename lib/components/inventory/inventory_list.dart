@@ -100,22 +100,28 @@ class InventoryListState extends State<InventoryList> {
         return _isLoading
             ? const Padding(
                 padding: EdgeInsets.only(top: 48),
-                child: CircularProgressIndicator())
+                child: CircularProgressIndicator(),
+              )
             : _filteredItems.isNotEmpty
                 ? Expanded(
-                    child: GridView.builder(
-                      gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
-                        crossAxisSpacing: 32,
-                        mainAxisSpacing: 32,
-                        childAspectRatio: 1,
-                      ),
-                      itemCount: _filteredItems.length,
-                      itemBuilder: (context, index) {
-                        return ItemCard(
-                          item: _filteredItems[index],
-                          onReload: loadInventory,
+                    child: LayoutBuilder(
+                      builder: (context, constraints) {
+                        double spacing = constraints.maxWidth < 400 ? 8 : 32;
+                        return GridView.builder(
+                          gridDelegate:
+                              SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2,
+                            crossAxisSpacing: spacing,
+                            mainAxisSpacing: spacing,
+                            childAspectRatio: 0.95,
+                          ),
+                          itemCount: _filteredItems.length,
+                          itemBuilder: (context, index) {
+                            return ItemCard(
+                              item: _filteredItems[index],
+                              onReload: loadInventory,
+                            );
+                          },
                         );
                       },
                     ),

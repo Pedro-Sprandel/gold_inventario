@@ -49,8 +49,7 @@ class StatusScreen extends StatelessWidget {
                   child: const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('Cadastrar novo status',
-                          style: TextStyle(color: Colors.white)),
+                      Text('Cadastrar', style: TextStyle(color: Colors.white)),
                       SizedBox(width: 8),
                       FaIcon(
                         FontAwesomeIcons.plus,

@@ -34,8 +34,7 @@ class TypesScreen extends StatelessWidget {
             const BackButtonTopBar(),
             const SizedBox(height: 24),
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-              const Text('Tipos de equipamento',
-                  style: TextStyle(fontSize: 20)),
+              const Text('Tipos', style: TextStyle(fontSize: 20)),
               TextButton(
                   onPressed: () => _onClickAddNewType(context),
                   style: TextButton.styleFrom(
@@ -44,8 +43,7 @@ class TypesScreen extends StatelessWidget {
                   child: const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('Cadastrar novo',
-                          style: TextStyle(color: Colors.white)),
+                      Text('Cadastrar', style: TextStyle(color: Colors.white)),
                       SizedBox(width: 8),
                       FaIcon(
                         FontAwesomeIcons.plus,
