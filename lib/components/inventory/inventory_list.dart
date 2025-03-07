@@ -34,7 +34,7 @@ class InventoryListState extends State<InventoryList> {
   bool _isLoading = true;
 
   void loadInventory() async {
-    final userProvider = Provider.of<UserProvider>(context, listen: true);
+    final userProvider = Provider.of<UserProvider>(context, listen: false);
 
     Response response = await getItems(userProvider.role!.locations);
 

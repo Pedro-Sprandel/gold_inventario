@@ -138,6 +138,7 @@ class ItemRegistrationFormState extends State<ItemRegistrationForm> {
     showSnackbar(context, response.success, response.message);
 
     if (response.success) {
+      print('CAIU AQUI');
       Navigator.pop(context, 'completed');
     }
   }
