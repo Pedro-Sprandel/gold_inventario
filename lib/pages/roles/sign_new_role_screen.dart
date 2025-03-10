@@ -10,15 +10,17 @@ class SignNewRoleScreen extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Theme.of(context).colorScheme.surface,
-      body: const Padding(
-        padding: EdgeInsets.only(top: 60, left: 24, bottom: 24, right: 24),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            BackButtonTopBar(),
-            SizedBox(height: 24),
-            RoleRegistrationForm()
-          ],
+      body: const SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.only(top: 60, left: 24, bottom: 24, right: 24),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              BackButtonTopBar(),
+              SizedBox(height: 24),
+              RoleRegistrationForm(),
+            ],
+          ),
         ),
       ),
     );

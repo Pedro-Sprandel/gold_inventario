@@ -29,34 +29,37 @@ class LocationsScreen extends StatelessWidget {
       body: Padding(
         padding:
             const EdgeInsets.only(top: 60, left: 24, bottom: 24, right: 24),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const BackButtonTopBar(),
-            const SizedBox(height: 24),
-            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-              const Text('Localidades', style: TextStyle(fontSize: 20)),
-              TextButton(
-                  onPressed: () => _onClickAddNewLocation(context),
-                  style: TextButton.styleFrom(
-                      backgroundColor:
-                          Theme.of(context).colorScheme.onPrimaryContainer),
-                  child: const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text('Cadastrar', style: TextStyle(color: Colors.white)),
-                      SizedBox(width: 8),
-                      FaIcon(
-                        FontAwesomeIcons.plus,
-                        color: Colors.white,
-                        size: 16,
-                      )
-                    ],
-                  ))
-            ]),
-            const SizedBox(height: 12),
-            LocationList(key: _locationListKey),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const BackButtonTopBar(),
+              const SizedBox(height: 24),
+              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                const Text('Localidades', style: TextStyle(fontSize: 20)),
+                TextButton(
+                    onPressed: () => _onClickAddNewLocation(context),
+                    style: TextButton.styleFrom(
+                        backgroundColor:
+                            Theme.of(context).colorScheme.onPrimaryContainer),
+                    child: const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text('Cadastrar',
+                            style: TextStyle(color: Colors.white)),
+                        SizedBox(width: 8),
+                        FaIcon(
+                          FontAwesomeIcons.plus,
+                          color: Colors.white,
+                          size: 16,
+                        )
+                      ],
+                    ))
+              ]),
+              const SizedBox(height: 12),
+              LocationList(key: _locationListKey),
+            ],
+          ),
         ),
       ),
     );

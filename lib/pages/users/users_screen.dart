@@ -28,32 +28,34 @@ class UsersScreen extends StatelessWidget {
       body: Padding(
         padding:
             const EdgeInsets.only(top: 60, left: 24, bottom: 24, right: 24),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const BackButtonTopBar(),
-            const SizedBox(height: 24),
-            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-              const Text('Usuários', style: TextStyle(fontSize: 20)),
-              TextButton(
-                  onPressed: () => _onClickSignNewUser(context),
-                  style: TextButton.styleFrom(
-                      backgroundColor:
-                          Theme.of(context).colorScheme.onPrimaryContainer),
-                  child: const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text('Cadastrar novo usuário',
-                          style: TextStyle(color: Colors.white)),
-                      SizedBox(width: 8),
-                      FaIcon(FontAwesomeIcons.plus,
-                          color: Colors.white, size: 16)
-                    ],
-                  ))
-            ]),
-            const SizedBox(height: 12),
-            UserList(key: _userListKey)
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const BackButtonTopBar(),
+              const SizedBox(height: 24),
+              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                const Text('Usuários', style: TextStyle(fontSize: 20)),
+                TextButton(
+                    onPressed: () => _onClickSignNewUser(context),
+                    style: TextButton.styleFrom(
+                        backgroundColor:
+                            Theme.of(context).colorScheme.onPrimaryContainer),
+                    child: const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text('Cadastrar novo usuário',
+                            style: TextStyle(color: Colors.white)),
+                        SizedBox(width: 8),
+                        FaIcon(FontAwesomeIcons.plus,
+                            color: Colors.white, size: 16)
+                      ],
+                    ))
+              ]),
+              const SizedBox(height: 12),
+              UserList(key: _userListKey)
+            ],
+          ),
         ),
       ),
     );

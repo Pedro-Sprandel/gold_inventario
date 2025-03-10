@@ -204,27 +204,6 @@ Future<Response> updateItem(Item data, File? imageFile) async {
   try {
     String? imageUrl = data.image;
 
-    // if (imageFile != null && await imageFile.exists()) {
-    //   if (imageUrl != null) {
-    //     try {
-    //       if (imageUrl.startsWith('https://')) {
-    //         String gsUrl = imageUrl.replaceFirst(
-    //             'https://firebasestorage.googleapis.com/v0/b/', 'gs://');
-    //         gsUrl = gsUrl.split('?')[0];
-
-    //         await FirebaseStorage.instance.refFromURL(gsUrl).delete();
-    //       } else {
-    //         await FirebaseStorage.instance.refFromURL(imageUrl).delete();
-    //       }
-    //     } catch (e) {
-    //       return Response(
-    //         success: false,
-    //         message: 'Erro ao excluir a imagem antiga: $e',
-    //       );
-    //     }
-    //   }
-    // }
-
     if (imageFile != null) {
       final storageRef = FirebaseStorage.instance
           .ref()

@@ -16,13 +16,15 @@ class RoleScreen extends StatelessWidget {
       body: Padding(
         padding:
             const EdgeInsets.only(top: 60, left: 24, bottom: 24, right: 24),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const BackButtonTopBar(),
-            const SizedBox(height: 24),
-            RoleEditForm(role: role)
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const BackButtonTopBar(),
+              const SizedBox(height: 24),
+              RoleEditForm(role: role)
+            ],
+          ),
         ),
       ),
     );
